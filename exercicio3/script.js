@@ -11,3 +11,39 @@ const produtos = [
     { nome: "Sabão em Pó", categoria: "Limpeza", preco: 10.80 }
  ]
  
+const novoArray = produtos.filter((item) => item.categoria === "Limpeza" );
+console.log(novoArray)
+
+//1 - Retorne os produtos maiores de 7 reais
+const acimdaDe7 = produtos.filter((item) => item.preco > 7);
+console.log(acimdaDe7);
+
+// - Retorne os produtos menores de 7 reais
+const abaixoDe7 = produtos.filter((item) => item.preco < 7);
+console.log(abaixoDe7);
+
+// - Retorne apenas os nome dos produtos
+const nomeDosProdutos = produtos.map((item) => item.nome);
+console.log(nomeDosProdutos);
+
+// - Retorne  apenas os nomes dos produtos com precos.
+// - A frase a ser retornada deve ficar assim: O produto Alface Lavada custa R$ 2.50'
+const nomesPrecos = produtos.map((item) => `O produto ${item.nome} custa ${item.preco.toFixed(2)}.`);
+console.log(nomesPrecos);
+
+//Vamos somar o valor total os produtos no array acima.
+// Crie uma variavel precoTotal e atribua 0 a ela.
+// Utilize o for of para percorrer todos os produtos
+// dentro do escopo do for faça a soma para saber o valor total dos produtos
+let precoTotal = 0;
+
+for (let produto of produtos){
+    precoTotal = precoTotal + produto.preco
+};
+
+console.log("O preço total dos produtos ficou R$",precoTotal)
+
+
+
+
+
